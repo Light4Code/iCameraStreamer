@@ -5,20 +5,20 @@
 //  Created by Levent Tasdemir on 04.04.23.
 //
 
-import Foundation
-import AVFoundation
 import Cocoa
+import AVFoundation
 
 class CameraManager: NSObject {
     private var previewLayer: AVCaptureVideoPreviewLayer!
     private var captureSession: AVCaptureSession!
     private var captureDevice: AVCaptureDevice!
+    private var videoDataOutput: AVCaptureVideoDataOutput!
     private var availableCaptuteDevices: [AVCaptureDevice]!
     
     private let containerView: NSView
     private let cameraQueue: DispatchQueue
     
-    weak var delegate: CameraManagerDelegate?
+    weak var captuteDelegate: CameraCaptureDelegate?
     
     public var captuteDevices: [AVCaptureDevice] {
         get { return availableCaptuteDevices }
@@ -60,10 +60,10 @@ class CameraManager: NSObject {
             throw CameraError.cannotDetectCameraDevice
         }
         
-        let videoOutput = AVCaptureVideoDataOutput()
-        videoOutput.setSampleBufferDelegate(self, queue: cameraQueue)
-        if captureSession.canAddOutput(videoOutput) {
-            captureSession.addOutput(videoOutput)
+        videoDataOutput = AVCaptureVideoDataOutput()
+        videoDataOutput.setSampleBufferDelegate(self, queue: cameraQueue)
+        if captureSession.canAddOutput(videoDataOutput) {
+            captureSession.addOutput(videoDataOutput)
         } else {
             throw CameraError.cannotAddOutput
         }
@@ -110,7 +110,7 @@ class CameraManager: NSObject {
 
 extension CameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        
+        captuteDelegate?.captureVideoOutput(sampleBuffer: sampleBuffer)
     }
 }
 
@@ -118,8 +118,8 @@ typealias CameraCaptureOutput = AVCaptureOutput
 typealias CameraSampleBuffer = CMSampleBuffer
 typealias CameraCaptureConnection = AVCaptureConnection
 
-protocol CameraManagerDelegate: AnyObject {
-  func cameraManager(_ output: CameraCaptureOutput, didOutput sampleBuffer: CameraSampleBuffer, from connection: CameraCaptureConnection)
+protocol CameraCaptureDelegate: AnyObject {
+    func captureVideoOutput(sampleBuffer: CMSampleBuffer)
 }
 
 enum CameraError: LocalizedError {

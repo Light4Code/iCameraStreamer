@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C654292F72D0214FDA06BB6 /* Pods_iCameraStreamer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0C870FA062DD4300D29BBD4 /* Pods_iCameraStreamer.framework */; };
 		EF49CF9D29DC7186003903D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF49CF9C29DC7186003903D6 /* AppDelegate.swift */; };
 		EF49CF9F29DC7186003903D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF49CF9E29DC7186003903D6 /* ViewController.swift */; };
 		EF49CFA129DC7187003903D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF49CFA029DC7187003903D6 /* Assets.xcassets */; };
 		EF49CFA429DC7187003903D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF49CFA229DC7187003903D6 /* Main.storyboard */; };
 		EF49CFAC29DC71B2003903D6 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF49CFAB29DC71B2003903D6 /* CameraManager.swift */; };
+		EF49CFAE29DC9A6D003903D6 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = EF49CFAD29DC9A6D003903D6 /* Podfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3076030D50A852E67DC3174D /* Pods-iCameraStreamer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCameraStreamer.release.xcconfig"; path = "Target Support Files/Pods-iCameraStreamer/Pods-iCameraStreamer.release.xcconfig"; sourceTree = "<group>"; };
+		9FE0DD32578F2B7D13892B26 /* Pods-iCameraStreamer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCameraStreamer.debug.xcconfig"; path = "Target Support Files/Pods-iCameraStreamer/Pods-iCameraStreamer.debug.xcconfig"; sourceTree = "<group>"; };
+		E0C870FA062DD4300D29BBD4 /* Pods_iCameraStreamer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iCameraStreamer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF49CF9929DC7186003903D6 /* iCameraStreamer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCameraStreamer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF49CF9C29DC7186003903D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF49CF9E29DC7186003903D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,7 @@
 		EF49CFA329DC7187003903D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF49CFA529DC7187003903D6 /* ICameraStreamer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ICameraStreamer.entitlements; sourceTree = "<group>"; };
 		EF49CFAB29DC71B2003903D6 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		EF49CFAD29DC9A6D003903D6 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C654292F72D0214FDA06BB6 /* Pods_iCameraStreamer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37EE3438C178EB7BF753756E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0C870FA062DD4300D29BBD4 /* Pods_iCameraStreamer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6380673400403C2254EEA2A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9FE0DD32578F2B7D13892B26 /* Pods-iCameraStreamer.debug.xcconfig */,
+				3076030D50A852E67DC3174D /* Pods-iCameraStreamer.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EF49CF9029DC7186003903D6 = {
 			isa = PBXGroup;
 			children = (
+				EF49CFAD29DC9A6D003903D6 /* Podfile */,
 				EF49CF9B29DC7186003903D6 /* iCameraStreamer */,
 				EF49CF9A29DC7186003903D6 /* Products */,
+				6380673400403C2254EEA2A3 /* Pods */,
+				37EE3438C178EB7BF753756E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF49CFA829DC7187003903D6 /* Build configuration list for PBXNativeTarget "iCameraStreamer" */;
 			buildPhases = (
+				48C6B81A356C65C45287BC64 /* [CP] Check Pods Manifest.lock */,
 				EF49CF9529DC7186003903D6 /* Sources */,
 				EF49CF9629DC7186003903D6 /* Frameworks */,
 				EF49CF9729DC7186003903D6 /* Resources */,
+				544A349A2964A5686C1AED94 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,12 +151,55 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF49CFAE29DC9A6D003903D6 /* Podfile in Resources */,
 				EF49CFA129DC7187003903D6 /* Assets.xcassets in Resources */,
 				EF49CFA429DC7187003903D6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		48C6B81A356C65C45287BC64 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iCameraStreamer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		544A349A2964A5686C1AED94 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iCameraStreamer/Pods-iCameraStreamer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iCameraStreamer/Pods-iCameraStreamer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iCameraStreamer/Pods-iCameraStreamer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EF49CF9529DC7186003903D6 /* Sources */ = {
@@ -269,6 +341,7 @@
 		};
 		EF49CFA929DC7187003903D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FE0DD32578F2B7D13892B26 /* Pods-iCameraStreamer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -281,6 +354,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camrea is needed to capture images/videos";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Needs network for sending images";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -297,6 +371,7 @@
 		};
 		EF49CFAA29DC7187003903D6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3076030D50A852E67DC3174D /* Pods-iCameraStreamer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -309,6 +384,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camrea is needed to capture images/videos";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Needs network for sending images";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
